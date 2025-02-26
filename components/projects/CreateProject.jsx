@@ -349,7 +349,8 @@ const StepForm = () => {
     </div>
 
     {/* Upload Cards - Smaller & Single Row */}
-    <div className="grid grid-cols-4 gap-4">
+    <p className="mt-10 font-bold text-2xl">Upload Documents</p>
+    <div className="grid grid-cols-4 gap-4 mt-10">
       {[
         { label: "Safety Checklist", name: "safetyChecklist" },
         { label: "Service Order Form (SOF)", name: "serviceOrderForm" },
@@ -367,9 +368,7 @@ const StepForm = () => {
                 Add File
               </Button>
             </div>
-            <Button className="mt-2 w-full bg-blue-600 hover:bg-blue-700 text-white text-xs px-2 py-1">
-              Upload
-            </Button>
+           
           </CardContent>
         </Card>
       ))}

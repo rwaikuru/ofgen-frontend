@@ -19,8 +19,9 @@ export default function TaskModal() {
   return (
     <>
       {/* Button to open the modal */}
-      <Button onClick={() => setOpen(true)}>Create Task</Button>
-
+      <div className="flex justify-end">
+      <Button  onClick={() => setOpen(true)}>Create Task</Button>
+</div>
       <Dialog open={open} onOpenChange={setOpen}>
         <DialogContent className="max-w-lg">
           <DialogHeader>

@@ -15,26 +15,44 @@ import { ArrowUpDown } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 
 export const projects = [
-  {
-    id: "RV_N01029",
-    name: "Solar Farm A",
-    region: "Rift Valley",
-    status: "inprogress",
-    priority: "medium",
-    progress: "75%",
-    startdate: "2023-10-01",
-    enddate: "2024-03-31",
-  },
-  {
-    id: "CE_N02045",
-    name: "Solar Farm B",
-    region: "Central",
-    status: "pending",
-    priority: "high",
-    progress: "0%",
-    startdate: "2024-01-15",
-    enddate: "2024-12-15",
-  },
+
+    {
+        number:"SP-100",
+        id:"NV_RO0928",
+        name:"Solar Panels",
+        quantity:"100",
+        status:"Ordered",
+        orderDate:"12/12/2021",
+        deliveryDate:"12/12/2021",
+       },
+       {
+        number:"SP-100",
+        id:"NV_RO0928",
+        name:"Solar Panels",
+        quantity:"100",
+        status:"Ordered",
+        orderDate:"12/12/2021",
+        deliveryDate:"12/12/2021",
+       },
+       {
+        number:"SP-100",
+        id:"NV_RO0928",
+        name:"Solar Panels",
+        quantity:"100",
+        status:"Ordered",
+        orderDate:"12/12/2021",
+        deliveryDate:"12/12/2021",
+       },
+       {
+        number:"SP-100",
+        id:"NV_RO0928",
+        name:"Solar Panels",
+        quantity:"100",
+        status:"Ordered",
+        orderDate:"12/12/2021",
+        deliveryDate:"12/12/2021",
+       },
+       
 ]
 
 export const columns = [
@@ -63,38 +81,36 @@ export const columns = [
   },
   {
     accessorKey: "id",
-    header: "Site ID",
+    header: "SOF ID",
+  },
+  {
+    accessorKey: "number",
+    header: "Equipment Number",
   },
   {
     accessorKey: "name",
-    header: "Name",
-  },
-  
-  {
-    accessorKey: "region",
-   header: "Region",
+    header: "Equipment Name",
   },
   {
-    accessorKey: "status",
-   header: "Status",
+    accessorKey: "quantity",
+    header: "Quantity",
   },
 
   {
-    accessorKey: "priority",
-    header: "Priority",
+    accessorKey: "status",
+    header: "Status",
+  },
+
+  {
+    accessorKey: "orderDate",
+    header: "Order Date",
   },
   {
-    accessorKey: "progress",
-    header: "Progress",
+    accessorKey: "deliveryDate",
+    header: "Delivery Date",
   },
-  {
-    accessorKey: "startdate",
-    header:"Start Date",
-  },
-  {
-    accessorKey: "enddate",
-    header: "End Date",
-  },
+  
+ 
   {
     id: "actions",
     cell: ({ row }) => {
@@ -103,7 +119,7 @@ export const columns = [
 
     const handleViewProject = () => {
       // router.push(`/projects/details/${project.id}`) 
-      router.push(`/projects/details/`) 
+    //   router.push(`/projects/details/`) 
 
     }
 
@@ -124,9 +140,9 @@ export const columns = [
             </DropdownMenuItem> */}
             <DropdownMenuSeparator />
             <DropdownMenuItem>View Details</DropdownMenuItem>
-         <DropdownMenuItem onClick={handleViewProject}>
+            {/* <DropdownMenuItem onClick={handleViewProject}>
       View Project
-    </DropdownMenuItem>
+    </DropdownMenuItem> */}
           </DropdownMenuContent>
         </DropdownMenu>
       )

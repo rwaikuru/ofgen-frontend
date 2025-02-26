@@ -10,7 +10,7 @@ function Page() {
     <Header/>
    <Card clasName="m-5">
      <CardHeader>
-       <CardTitle>Create New Project</CardTitle>
+       <CardTitle className="text-2xl font-bold">Create New Project</CardTitle>
      </CardHeader>
      <CardContent>
        <StepOneForm />

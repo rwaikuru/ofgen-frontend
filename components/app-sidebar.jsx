@@ -75,7 +75,7 @@ const data = {
       items: [
         {
           title: "All Sites",
-          url: "#",
+          url: "/sites",
         },
         {
           title: "Create Site",
@@ -94,7 +94,7 @@ const data = {
       items: [
         {
           title: "Equipment Catalog",
-          url: "/equipments/new",
+          url: "/equipments",
         },
         {
           title: "Procurement Status",
@@ -113,11 +113,11 @@ const data = {
       items: [
         {
           title: "Service Orders(SOF)",
-          url: "SOF/new",
+          url: "/installation/SOF",
         },
         {
           title: "Work Orders",
-          url: "#",
+          url: "/installation/workorders",
         },
         {
           title: "Installation Tracking",
@@ -192,13 +192,7 @@ const data = {
       ],
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-  ],
+ 
 }
 
 export function AppSidebar({
@@ -211,7 +205,6 @@ export function AppSidebar({
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavProjects projects={data.projects} />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
