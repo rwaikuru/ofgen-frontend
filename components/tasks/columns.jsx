@@ -15,26 +15,38 @@ import { ArrowUpDown } from "lucide-react"
 import { Checkbox } from "@/components/ui/checkbox"
 
 export const projects = [
-  {
-    id: "RV_N01029",
-    name: "Solar Farm A",
-    region: "Rift Valley",
-    status: "inprogress",
-    priority: "medium",
-    progress: "75%",
-    startdate: "2023-10-01",
-    enddate: "2024-03-31",
-  },
-  {
-    id: "CE_N02045",
-    name: "Solar Farm B",
-    region: "Central",
-    status: "pending",
-    priority: "high",
-    progress: "0%",
-    startdate: "2024-01-15",
-    enddate: "2024-12-15",
-  },
+    {
+        name: "Install Solar Panels",
+        assignedTo: "John Doe",
+        status: "In Progress",
+        progress: "75%",
+        startDate: "2023-10-01",
+        endDate: "2024-03-31",
+      },
+      {
+        name: "Connect Inverter",
+        assignedTo: "Jane Smith",
+        status: "Not Started",
+        progress: "0%",
+        startDate: "2023-10-01",
+        endDate: "2024-03-31",
+      },
+      {
+        name: "Install Solar Panels",
+        assignedTo: "John Doe",
+        status: "In Progress",
+        progress: "75%",
+        startDate: "2023-10-01",
+        endDate: "2024-03-31",
+      },
+      {
+        name: "Connect Inverter",
+        assignedTo: "Jane Smith",
+        status: "Not Started",
+        progress: "0%",
+        startDate: "2023-10-01",
+        endDate: "2024-03-31",
+      },
 ]
 
 export const columns = [
@@ -76,6 +88,21 @@ export const columns = [
     },
   },
   {
+    accessorKey: "assignedTo",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Status
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+  },
+
+  {
     accessorKey: "status",
     header: ({ column }) => {
       return (
@@ -89,36 +116,7 @@ export const columns = [
       )
     },
   },
-  
-  {
-    accessorKey: "region",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Region
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },  },
 
-
-  {
-    accessorKey: "priority",
-    header: ({ column }) => {
-      return (
-        <Button
-          variant="ghost"
-          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
-        >
-          Priority
-          <ArrowUpDown className="ml-2 h-4 w-4" />
-        </Button>
-      )
-    },
-  },
   {
     accessorKey: "progress",
     header: ({ column }) => {
@@ -134,7 +132,21 @@ export const columns = [
     },
   },
   {
-    accessorKey: "startdate",
+    accessorKey: "priority",
+    header: ({ column }) => {
+      return (
+        <Button
+          variant="ghost"
+          onClick={() => column.toggleSorting(column.getIsSorted() === "asc")}
+        >
+          Progress
+          <ArrowUpDown className="ml-2 h-4 w-4" />
+        </Button>
+      )
+    },
+  },
+  {
+    accessorKey: "startDate",
     header: ({ column }) => {
       return (
         <Button
@@ -147,7 +159,7 @@ export const columns = [
       )
     },  },
   {
-    accessorKey: "enddate",
+    accessorKey: "endDate",
     header: ({ column }) => {
       return (
         <Button
@@ -168,7 +180,7 @@ export const columns = [
 
     const handleViewProject = () => {
       // router.push(`/projects/details/${project.id}`) 
-      router.push(`/projects/details/`) 
+    //   router.push(`/projects/details/`) 
 
     }
 

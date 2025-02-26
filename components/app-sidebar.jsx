@@ -64,7 +64,7 @@ const data = {
         },
         {
           title: "Task Management",
-          url: "/taskmanagement/new",
+          url: "/tasks/details",
         },
       ],
     },
