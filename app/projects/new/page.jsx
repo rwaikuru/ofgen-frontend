@@ -5,10 +5,10 @@ import Header from '@/components/header';
 
 function Page() {
  return (
-  
-  <div className="">
+  <div>
     <Header/>
-   <Card clasName="m-5">
+ <div className="m-10">
+   <Card clasName="m-10">
      <CardHeader>
        <CardTitle className="text-2xl font-bold">Create New Project</CardTitle>
      </CardHeader>
@@ -17,6 +17,8 @@ function Page() {
      </CardContent>
    </Card>
    </div>
+  </div>
+ 
  );
 }
 

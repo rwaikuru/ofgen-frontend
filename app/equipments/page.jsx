@@ -3,6 +3,8 @@ import { DataTable } from "../../components/ui/data-table"
 import Header from "@/components/header"
 import AddSite from '@/components/sites/addsite'
 import React from 'react'
+import { Button } from "@/components/ui/button"
+import Link from "next/link"
 
 
 
@@ -64,7 +66,10 @@ export default async function DemoPage() {
     <div>
       <Header/>
       <div className="p-5 m-10 "> 
-                <div className='m-10'>
+                <div className='flex justify-end mb-2'>
+                <Button asChild>
+        <Link href="/equipments/new">Add Equipment</Link>
+      </Button> 
              </div>
       <h1 className="text-2xl font-bold">Equipment Catalog</h1>
       <DataTable columns={columns} data={data} />

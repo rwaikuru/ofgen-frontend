@@ -83,7 +83,7 @@ const StepForm = () => {
 
         <div className="flex justify-between mb-4">
           {["Project Details", "Task Details", "HSE & Docs", "Review & Submit"].map((label, index) => (
-            <div key={index} className={`px-4 py-2 rounded ${step === index + 1 ? "bg-green-500 text-white" : "bg-gray-200"}`}>
+            <div key={index} className={`px-4 py-2 rounded ${step === index + 1 ? "bg-blue-700 text-white" : "bg-gray-100"}`}>
               {label}
             </div>
           ))}
@@ -96,7 +96,7 @@ const StepForm = () => {
           <>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {/* Project Details */}
-              <Card>
+              <Card className="m-10">
   <CardHeader>
     <CardTitle>Project Details</CardTitle>
   </CardHeader>
@@ -179,7 +179,7 @@ const StepForm = () => {
 </Card>
 
               {/* Site Details */}
-              <Card>
+              <Card className="m-10">
                 <CardHeader><CardTitle>Site Details</CardTitle></CardHeader>
                 <CardContent className="grid gap-4">
                   <FormField control={methods.control} name="siteId" render={({ field }) => (

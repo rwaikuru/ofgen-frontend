@@ -35,7 +35,7 @@ export default function Header() {
           <DropdownMenuContent className="w-56" align="end" forceMount>
             <DropdownMenuItem className="flex flex-col items-start">
               <div className="text-sm font-medium">John Doe</div>
-              <div className="text-xs text-muted-foreground">charles@srcc.com</div>
+              <div className="text-xs text-muted-foreground">johndoe@ofgen.com</div>
             </DropdownMenuItem>
             <DropdownMenuItem>
               <User className="h-4 w-4 text-black" />

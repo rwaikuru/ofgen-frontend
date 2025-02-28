@@ -95,6 +95,7 @@ export default async function Detailspage() {
 
   return (
     <div className="container mx-auto p-10">
+      <p className="font-bold">Projects Tasks</p>
       <DataTable columns={columns} data={data} />
     </div>
   )
