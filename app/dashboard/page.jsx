@@ -1,13 +1,9 @@
-import { Header } from "../../components/header";
-import DashboardProvider from "../dashboard-provider";
+import React from 'react'
 
-
-export default async function DashboardPage() {
-  
-
+function page() {
   return (
-    <DashboardProvider>
-      <Header />  
-    </DashboardProvider>
-  );
+    <div>page</div>
+  )
 }
+
+export default page

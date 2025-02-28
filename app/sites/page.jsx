@@ -5,6 +5,7 @@ import AddSite from '@/components/sites/addsite'
 import React from 'react'
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import  Stats  from "@/components/sites/stats"
 
 
 
@@ -58,16 +59,21 @@ export default async function DemoPage() {
 
   return (
     <div>
-    <Header/>
-    <div className="p-5 m-10 "> 
-              <div className='flex justify-end mb-2'>
-              <Button asChild>
-      <Link href="/sites/addsite">Add Site</Link>
-    </Button> 
-           </div>
-    <h1 className="text-2xl font-bold">All Sites</h1>
-    <DataTable columns={columns} data={data} />
-  </div>
+    <Header />
+    <div className="p-5 m-10 space-y-6">
+      <div className="mb-6">
+        <Stats />
+      </div>
+
+      <div className="flex justify-between items-center">
+        <h1 className="text-2xl font-bold">All Sites</h1>
+        <Button asChild>
+          <Link href="/sites/addsite">Add Site</Link>
+        </Button>
+      </div>
+
+      <DataTable columns={columns} data={data} />
+    </div>
   </div>
   )
 }

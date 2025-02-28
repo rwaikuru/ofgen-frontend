@@ -32,11 +32,11 @@ const data = {
     email: "johndoe@example.com",
     avatar: "/user.png",
   },
-  teams: [
+  team: [
     {
-      name: "OFGEN ",
-      logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      name: "OFGEN",
+      logo: "/ofgen.png",
+      plan: "Enterprises",
     },
     
   ],
@@ -200,7 +200,8 @@ export function AppSidebar({
   return (
     (<Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
+      <img src={"/ofgenlogo.png"}/>
+
       </SidebarHeader>
       <SidebarContent>
         <NavMain items={data.navMain} />
