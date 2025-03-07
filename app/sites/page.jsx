@@ -66,8 +66,11 @@ export default async function DemoPage() {
       </div>
 
       <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold">All Sites</h1>
-        <Button asChild>
+        <h1 className="text-2xl mt-5  font-bold">All Sites</h1>
+       
+      </div>
+      <div className="align-right flex justify-end"> 
+      <Button asChild>
           <Link href="/sites/addsite">Add Site</Link>
         </Button>
       </div>

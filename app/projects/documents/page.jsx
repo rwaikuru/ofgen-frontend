@@ -58,8 +58,7 @@ export default async function Documentstable() {
   const data = await getData()
 
   return (
-    <div className="container mx-auto p-10">
-      <h1 className="text-xl mt-10 ">Projects Documents</h1>
+    <div className="container mx-auto">
       <DataTable columns={columns} data={data} />
       
     </div>

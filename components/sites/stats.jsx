@@ -14,11 +14,12 @@ const Stats = () => {
 
       <Card>
         <CardHeader>
-          <CardTitle>Active vs Inactive</CardTitle>
+          <CardTitle>Active</CardTitle>
         </CardHeader>
         <CardContent>
-          <p className="text-green-500 font-semibold">Active: 45</p>
-          <p className="text-red-500 font-semibold">Inactive: 5</p>
+          <p className="text-2xl font-bold"> 200</p>
+          {/* <p className="text-green-500 font-semibold">Active: 45</p>
+          <p className="text-red-500 font-semibold">Inactive: 5</p> */}
         </CardContent>
       </Card>
 
@@ -36,7 +37,7 @@ const Stats = () => {
           <CardTitle>Site Types</CardTitle>
         </CardHeader>
         <CardContent>
-          <p>1020</p>
+          <p className="text-2xl font-bold">1020</p>
         </CardContent>
       </Card>
     </div>

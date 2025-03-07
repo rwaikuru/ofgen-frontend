@@ -56,15 +56,10 @@ export default function RootLayout({ children }) {
         >
           <AppSidebar />
           <SidebarInset > 
-            <ThemeProvider
-              attribute="class"
-              defaultTheme="system"
-              enableSystem
-              disableTransitionOnChange
-            >
+          
               <Toaster />
               {children}
-            </ThemeProvider>
+           
           </SidebarInset>
         </SidebarProvider>
       </body>
