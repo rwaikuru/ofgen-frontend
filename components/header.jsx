@@ -12,6 +12,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Bell, LogOut, Settings, User} from "lucide-react"; 
+import { ModeToggle } from "./mode-toggle";
 
 export default function Header() {
   return (
@@ -32,7 +33,7 @@ export default function Header() {
               </Avatar>
             </Button>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56" align="end" forceMount>
+          <DropdownMenuContent className="w-56 bg-white" align="end" forceMount>
             <DropdownMenuItem className="flex flex-col items-start">
               <div className="text-sm font-medium">John Doe</div>
               <div className="text-xs text-muted-foreground">johndoe@ofgen.com</div>
@@ -51,6 +52,7 @@ export default function Header() {
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
+        <ModeToggle/>
       </div>
     </header>
   );

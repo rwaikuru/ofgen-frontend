@@ -39,6 +39,13 @@ import { Progress } from "@/components/ui/progress";
 import { CalendarIcon } from "lucide-react"
 
 
+// interface EquipmentField {
+//   name: string;
+//   yearsOfExperience: number;
+//   proficiencyLevel: string;
+// }
+
+
 const FormSchema = z.object({
   projectName: z.string().min(2, { message: "Project name is required." }),
   projectManager: z.string().min(1, { message: "Project Manager is required." }),
@@ -48,9 +55,9 @@ const FormSchema = z.object({
 
 const StepForm = () => {
   const [step, setStep] = useState(1);
-  const [equipmentList, setEquipmentList] = useState([]);
   const [date, setDate] = React.useState();
   const [tasks, setTasks] = useState([{ name: "", assignedTo: "", startDate: "", endDate: "", priority: "", description: "" }]);
+  const [equipmentList, setEquipmentList] = useState([]);
 
   const methods = useForm({
     resolver: zodResolver(FormSchema),
@@ -70,11 +77,30 @@ const StepForm = () => {
   const removeTask = (index) => setTasks(tasks.filter((_, i) => i !== index));
   const addEquipment = () => {
     setEquipmentList([...equipmentList, { catalog: "", quantity: "", supplier: "", cost: "" }]);
+
+    const {
+      fields: EquipmentField,
+      append: appendequipment,
+      remove: removeequipment,
+    } = useFieldArray({
+      control,
+      name: "equipment",
+    });
   };
 
-  const removeEquipment = (index) => {
-    setEquipmentList(equipmentList.filter((_, i) => i !== index));
-  };
+  // // Function to update a specific field in an equipment item
+  // const updateEquipment = (index, field, value) => {
+  //   const updatedList = [...equipmentList];
+  //   updatedList[index][field] = value;
+  //   setEquipmentList(updatedList);
+  // };
+
+  // // Function to remove an equipment item
+  // const removeEquipment = (index) => {
+  //   setEquipmentList(equipmentList.filter((_, i) => i !== index));
+  // };
+  
+
 
 
   return (
@@ -226,7 +252,7 @@ const StepForm = () => {
               </Card>
             </div>
             {/* Equipment & Materials */}
-            <Card>
+            {/* <Card>
               <CardHeader><CardTitle>Equipment and Materials</CardTitle></CardHeader>
               <CardContent>
                 {equipmentList.map((equipment, index) => (
@@ -240,7 +266,45 @@ const StepForm = () => {
                 ))}
                 <Button className="mt-4" onClick={addEquipment}>Add +</Button>
               </CardContent>
-            </Card>
+            </Card> */}
+            <Card>
+  <CardHeader>
+    <CardTitle>Equipment and Materials</CardTitle>
+  </CardHeader>
+  <CardContent>
+    {equipmentList.map((equipment, index) => (
+      <div key={index} className="flex gap-4 mb-2">
+        <Input
+          placeholder="Equipment Catalog"
+          value={equipment.catalog}
+          onChange={(e) => updateEquipment(index, "catalog", e.target.value)}
+        />
+        <Input
+          placeholder="Quantity"
+          value={equipment.quantity}
+          onChange={(e) => updateEquipment(index, "quantity", e.target.value)}
+        />
+        <Input
+          placeholder="Supplier"
+          value={equipment.supplier}
+          onChange={(e) => updateEquipment(index, "supplier", e.target.value)}
+        />
+        <Input
+          placeholder="Cost"
+          value={equipment.cost}
+          onChange={(e) => updateEquipment(index, "cost", e.target.value)}
+        />
+        <Button variant="destructive" onClick={() => removeEquipment(index)}>
+          -
+        </Button>
+      </div>
+    ))}
+    <Button className="mt-4" onClick={addEquipment}>
+      Add +
+    </Button>
+  </CardContent>
+</Card>
+
             <div className="flex justify-between">
               <Button onClick={handleBack}>Previous</Button>
               <Button onClick={handleNext}>Next</Button>
